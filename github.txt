@@ -1,0 +1,8 @@
+cd C:\Users\nicoe\Desktop\deploiement_model_python
+git init
+git add .
+
+git commit -m "Initial commit"
+
+git remote add origin https://github.com/Nicko887/Deploiement_modele.git
+git push -u origin master

@@ -1,0 +1,111 @@
+{
+    "400": {
+      "code": 400,
+      "message": "La requête n’est pas valide."
+    },
+    "401": {
+      "code": 401,
+      "message": "La ressource demandée nécessite une authentification"
+    },
+    "403": {
+      "code": 403,
+      "message": "Autorisations manquantes pour répondre à cette requête."
+    },
+    "404": {
+      "code": 404,
+      "message": "La ressource demandée n’existe pas."
+    },
+    "405": {
+      "code": 405,
+      "message": "La méthode demandée n’est pas autorisée sur la ressource demandée."
+    },
+    "406": {
+      "code": 406,
+      "message": "Format de réponse demandé non pris en charge."
+    },
+    "408": {
+      "code": 408,
+      "message": "La demande a expiré."
+    },
+    "409": {
+      "code": 409,
+      "message": "Le serveur ne peut pas répondre à la requête en raison d’un conflit de serveur."
+    },
+    "410": {
+      "code": 410,
+      "message": "La ressource demandée n’est plus disponible."
+    },
+    "411": {
+      "code": 411,
+      "message": "L’en-tête Content-Length est manquant."
+    },
+    "412": {
+      "code": 412,
+      "message": "Une condition préalable pour cette requête a échoué."
+    },
+    "413": {
+      "code": 413,
+      "message": "La charge utile est trop grande."
+    },
+    "414": {
+      "code": 414,
+      "message": "L’URI est trop long."
+    },
+    "415": {
+      "code": 415,
+      "message": "Le type de média spécifié n’est pas pris en charge."
+    },
+    "416": {
+      "code": 416,
+      "message": "La plage de données demandée ne peut pas être satisfaite."
+    },
+    "417": {
+      "code": 417,
+      "message": "L’en-tête Expect n’a pas pu être satisfait."
+    },
+    "421": {
+      "code": 421,
+      "message": "Impossible de produire une réponse pour cette requête."
+    },
+    "422": {
+      "code": 422,
+      "message": "La requête contient des erreurs sémantiques."
+    },
+    "423": {
+      "code": 423,
+      "message": "La ressource source ou de destination est verrouillée."
+    },
+    "429": {
+      "code": 429,
+      "message": "Trop de requêtes. Réessayez plus tard."
+    },
+    "431": {
+      "code": 431,
+      "message": "Le champ d’en-tête de requête est trop grand."
+    },
+    "500": {
+      "code": 500,
+      "message": "Une erreur générique s’est produite sur le serveur."
+    },
+    "501": {
+      "code": 501,
+      "message": "Le serveur ne prend pas en charge la fonction demandée."
+    },
+    "502": {
+      "code": 502,
+      "message": "Réponse incorrecte reçue d’une autre passerelle."
+    },
+    "503": {
+      "code": 503,
+      "message": "Le serveur est momentanément indisponible. Réessayez ultérieurement."
+    },
+    "504": {
+      "code": 504,
+      "message": "Expiration du délai d’attente d’une autre passerelle."
+    },
+    "507": {
+      "code": 507,
+      "message": "Impossible d’enregistrer les données de la requête."
+    }
+  }
+  

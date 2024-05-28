@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prédiction Type de Plante</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Prédiction du Type de Plante</h1>
+        <form id="predictionForm">
+            <div class="form-group">
+                <label for="sepalLength">Longueur du Sépal:</label>
+                <input type="number" id="sepalLength" name="sepal_length" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="sepalWidth">Largeur du Sépal:</label>
+                <input type="number" id="sepalWidth" name="sepal_width" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="petalLength">Longueur du Pétale:</label>
+                <input type="number" id="petalLength" name="petal_length" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="petalWidth">Largeur du Pétale:</label>
+                <input type="number" id="petalWidth" name="petal_width" step="0.01" required>
+            </div>
+            <button type="submit">Prédire le Type</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+    document.getElementById('predictionForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Empêcher l'envoi classique du formulaire
+
+        // Récupération des valeurs du formulaire
+        var sepalLength = document.getElementById('sepalLength').value;
+        var sepalWidth = document.getElementById('sepalWidth').value;
+        var petalLength = document.getElementById('petalLength').value;
+        var petalWidth = document.getElementById('petalWidth').value;
+
+        // Préparation des données à envoyer au serveur
+        var data = {
+            sepal_length: sepalLength,
+            sepal_width: sepalWidth,
+            petal_length: petalLength,
+            petal_width: petalWidth
+        };
+
+        // Envoi des données au serveur Flask pour prédiction
+        fetch('http://127.0.0.1:8000/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('result').textContent = 'Type de plante prédit: ' + data.type;
+        })
+        .catch((error) => {
+            console.error('Erreur:', error);
+        });
+    });
+    </script>
+</body>
+</html>
