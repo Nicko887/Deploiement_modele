@@ -1,8 +1,99 @@
 cd C:\Users\nicoe\Desktop\deploiement_model_python
 git init
 git add .
-
 git commit -m "Initial commit"
-
 git remote add origin https://github.com/Nicko887/Deploiement_modele.git
 git push -u origin master
+
+
+
+
+Commencez par changer le répertoire de travail actuel vers celui de votre projet en utilisant la commande 
+cd C:\Users\nicoe\Desktop\deploiement_model_python. 
+
+Cela vous place dans le dossier où votre projet est situé. 
+
+Une fois dans le bon répertoire, initialisez un nouveau dépôt Git avec la commande 
+git init. 
+
+Cette commande crée un sous-répertoire .git qui contient tous les fichiers nécessaires pour gérer les versions de votre projet. 
+
+Ensuite, ajoutez tous les fichiers de ce répertoire au suivi de Git en utilisant la commande 
+git add .
+
+Le point (.) indique à Git d'ajouter tous les fichiers et dossiers du répertoire actuel. 
+
+Après avoir ajouté les fichiers, enregistrez ces modifications dans un commit initial avec la commande 
+git commit -m "Initial commit"
+
+Le flag -m permet d'inclure un message de commit directement dans la ligne de commande, 
+ici "Initial commit", ce qui aide à décrire ce que contient le commit.
+
+Ensuite, configurez un dépôt distant en utilisant la commande 
+git remote add origin https://github.com/Nicko887/Deploiement_modele.git. 
+
+Cela lie votre dépôt local à un dépôt distant sur GitHub, nommé "origin". Cette étape est essentielle pour permettre à Git de synchroniser les modifications entre votre machine locale et le dépôt distant. 
+Enfin, poussez les modifications locales vers le dépôt distant avec la 
+commande git push -u origin master
+
+Le flag -u (ou --set-upstream) associe la branche locale actuelle (par défaut master) à la branche distante, facilitant ainsi les futurs push et pull. Cette commande envoie les commits que vous avez effectués localement 
+au dépôt distant, rendant votre projet accessible et partageable via GitHub.
+
+En résumé, ces commandes permettent de préparer votre projet pour le suivi de version, d'enregistrer un état initial, de configurer un dépôt distant pour le partage et la collaboration, et de synchroniser votre travail 
+local avec ce dépôt distant.
+
+
+
+
+
+
+
+
+Créer et Gérer des Branches :
+
+git branch : Affiche la liste des branches locales.
+git branch nom_de_branche : Crée une nouvelle branche.
+git checkout nom_de_branche : Bascule vers une branche spécifique.
+git merge nom_de_branche : Fusionne une branche avec la branche actuelle.
+git branch -d nom_de_branche : Supprime une branche après fusion.
+
+Voir l'Histoire et les Modifications :
+
+git log : Affiche l'historique des commits.
+git diff : Affiche les différences entre les versions.
+git blame nom_de_fichier : Montre qui a modifié chaque ligne d'un fichier.
+
+Annuler et Revenir en Arrière :
+
+git revert id_commit : Annule un commit spécifique en créant un nouveau commit.
+git reset --hard id_commit : Réinitialise l'index et le répertoire de travail à un commit spécifique (ATTENTION : cette opération peut entraîner une perte de travail non sauvegardé).
+
+Gérer les Modifications Non Sauvegardées :
+
+git stash : Met de côté les modifications locales non sauvegardées.
+git stash apply : Applique les modifications mises de côté précédemment.
+git stash drop : Supprime les modifications mises de côté une fois appliquées.
+
+Travailler avec des Dépôts Distants :
+
+git remote -v : Affiche les dépôts distants associés au projet.
+git fetch : Télécharge les dernières modifications depuis le dépôt distant.
+git pull : Récupère et fusionne les modifications depuis le dépôt distant.
+git clone url_du_depot : Clone un dépôt distant vers votre machine locale.
+
+Étiqueter les Commits :
+
+git tag : Affiche la liste des tags.
+git tag -a nom_tag -m "Description du tag" : Crée un nouveau tag annoté avec une description.
+git push origin nom_tag : Pousse un tag vers le dépôt distant.
+
+Personnaliser Git :
+
+git config : Configure les options Git.
+git config --global user.name "Votre nom" : Configure votre nom d'utilisateur Git.
+git config --global user.email "votre@email.com" : Configure votre adresse e-mail Git.
+
+Collaboration et Gestion des Conflits :
+
+git pull --rebase : Récupère les modifications et réapplique vos commits locaux sur le dessus.
+git mergetool : Ouvre un outil de fusion pour résoudre les conflits de fusion.
