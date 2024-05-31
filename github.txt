@@ -97,3 +97,68 @@ Collaboration et Gestion des Conflits :
 
 git pull --rebase : Récupère les modifications et réapplique vos commits locaux sur le dessus.
 git mergetool : Ouvre un outil de fusion pour résoudre les conflits de fusion.
+
+
+
+
+
+
+### Développer un projet en cours sans créer des commits à chaque modification
+
+1. **Utiliser une branche de développement** :
+   - Créez une nouvelle branche pour travailler sur vos modifications.
+     ```bash
+     git checkout -b dev-branch
+     ```
+
+2. **Travailler sur la branche** :
+   - Effectuez vos modifications et testez-les dans cette branche.
+
+3. **Staging sélectif** :
+   - Ajoutez uniquement les modifications spécifiques que vous souhaitez inclure dans le prochain commit.
+     ```bash
+     git add fichier1.txt
+     git add fichier2.txt
+     ```
+   - Vérifiez les modifications ajoutées à l'index.
+     ```bash
+     git status
+     ```
+   - Créez un commit avec un message descriptif une fois satisfait des modifications ajoutées.
+     ```bash
+     git commit -m "Message descriptif"
+     ```
+
+4. **Amender des commits** :
+   - Utilisez `git commit --amend` pour ajouter des modifications supplémentaires ou ajuster le message du dernier commit.
+     ```bash
+     git add fichier3.txt
+     git commit --amend
+     ```
+   - Changez le message du dernier commit si nécessaire.
+     ```bash
+     git commit --amend -m "Nouveau message"
+     ```
+
+5. **Utiliser le stash** :
+   - Stashez les modifications temporairement pour les enregistrer sans créer de commit.
+     ```bash
+     git stash
+     ```
+   - Appliquez les modifications stasées lorsque vous êtes prêt à les committer.
+     ```bash
+     git stash apply
+     ```
+
+6. **Réécrire l'historique avec rebase interactif** :
+   - Commencez un rebase interactif pour organiser vos commits avant de les pousser.
+     ```bash
+     git rebase -i HEAD~n
+     ```
+   - Utilisez les commandes de l'éditeur interactif pour ajuster vos commits (`pick`, `squash`, `reword`).
+
+### Exemple concret
+
+1. **Créer une branche de développement** :
+   ```bash
+   git checkout -b dev-branch
