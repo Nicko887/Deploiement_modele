@@ -170,6 +170,41 @@ git mergetool : Ouvre un outil de fusion pour résoudre les conflits de fusion.
 
 
 
+# Vérifier la configuration du dépôt distant
+git remote -v
+
+# Vérifier les autorisations avec un fetch
+git fetch origin
+
+# Faire une petite modification et pousser pour vérifier les autorisations de push
+echo "test de connexion" > test.txt
+git add test.txt
+git commit -m "Test de connexion avec GitHub"
+git push origin main
+
+# Configurer l'authentification via token d'accès personnel (PAT) ou SSH
+
+## Générer un PAT sur GitHub :
+# 1. Allez dans vos paramètres GitHub > Developer settings > Personal access tokens > Generate new token.
+# 2. Utilisez le PAT comme mot de passe lors de la prochaine opération Git nécessitant une authentification.
+
+## Générer et ajouter une clé SSH :
+# 1. Générer une clé SSH
+ssh-keygen -t ed25519 -C "votre_email@example.com"
+
+# 2. Ajouter la clé SSH à l'agent SSH
+ssh-add ~/.ssh/id_ed25519
+
+# 3. Ajouter la clé SSH à GitHub
+# Copiez le contenu de ~/.ssh/id_ed25519.pub et ajoutez-le à vos clés SSH dans les paramètres de votre compte GitHub.
+
+# 4. Changer l'URL du dépôt distant pour utiliser SSH
+git remote set-url origin git@github.com:utilisateur/repo.git
+
+
+
+
+
 
 
 # Récapitulatif des commandes Git pour mettre à jour un commit en local à partir de GitHub
