@@ -162,3 +162,40 @@ git mergetool : Ouvre un outil de fusion pour résoudre les conflits de fusion.
 1. **Créer une branche de développement** :
    ```bash
    git checkout -b dev-branch
+
+
+
+
+
+
+
+
+
+
+# Récapitulatif des commandes Git pour mettre à jour un commit en local à partir de GitHub
+
+# 1. Assurez-vous que votre dépôt local est à jour avec les dernières modifications distantes
+# Cette commande récupère les dernières modifications de toutes les branches du dépôt distant sans les fusionner.
+git fetch origin
+
+# 2. Assurez-vous d'être sur la branche locale où vous voulez fusionner les modifications
+# Remplacez 'feature-branch' par le nom de votre branche locale actuelle.
+git checkout feature-branch
+
+# 3. Fusionner les modifications de la branche 'main' du dépôt distant dans votre branche locale
+# Cette commande combine les modifications de 'origin/main' avec votre branche locale actuelle.
+git merge origin/main
+
+# 4. Résoudre les conflits (si nécessaire)
+# Si des conflits surviennent lors de la fusion, Git vous demandera de les résoudre manuellement.
+# Ouvrez les fichiers avec des conflits et résolvez-les, puis ajoutez les fichiers résolus à l'index.
+git add fichier_conflit.txt
+
+# Finalisez la fusion en créant un commit de fusion, si Git ne l'a pas déjà fait automatiquement.
+git commit -m "Résolution des conflits de fusion avec origin/main"
+
+# Si aucun conflit n'a été détecté, Git aura automatiquement créé un commit de fusion.
+# Vous pouvez vérifier l'historique des commits pour vous assurer que la fusion a été réussie.
+git log
+
+# La branche locale 'feature-branch' est maintenant à jour avec les dernières modifications de 'main' du dépôt distant.
